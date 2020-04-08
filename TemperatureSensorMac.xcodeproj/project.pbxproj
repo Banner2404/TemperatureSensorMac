@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,9 +11,15 @@
 		D18D87D1243E36D7009BFAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D87D0243E36D7009BFAD0 /* ViewController.swift */; };
 		D18D87D3243E36DA009BFAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18D87D2243E36DA009BFAD0 /* Assets.xcassets */; };
 		D18D87D6243E36DA009BFAD0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D18D87D4243E36DA009BFAD0 /* Main.storyboard */; };
+		D18D87E0243E3B99009BFAD0 /* TemperatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */; };
+		D18D87E2243E3E1B009BFAD0 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = D18D87E1243E3E1B009BFAD0 /* certificate.p12 */; };
+		EA8491CE86A5E6EBF4320F81 /* Pods_TemperatureSensorMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE14B701DF8C27B1DCD55B5 /* Pods_TemperatureSensorMac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8972AC459DA70D10A0A76505 /* Pods-TemperatureSensorMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureSensorMac.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac.debug.xcconfig"; sourceTree = "<group>"; };
+		966A2FB2D31F339E10EB554B /* Pods-TemperatureSensorMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureSensorMac.release.xcconfig"; path = "Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac.release.xcconfig"; sourceTree = "<group>"; };
+		BEE14B701DF8C27B1DCD55B5 /* Pods_TemperatureSensorMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemperatureSensorMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18D87CB243E36D7009BFAD0 /* TemperatureSensorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureSensorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18D87CE243E36D7009BFAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18D87D0243E36D7009BFAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -21,6 +27,8 @@
 		D18D87D5243E36DA009BFAD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D18D87D7243E36DA009BFAD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D18D87D8243E36DA009BFAD0 /* TemperatureSensorMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TemperatureSensorMac.entitlements; sourceTree = "<group>"; };
+		D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureManager.swift; sourceTree = "<group>"; };
+		D18D87E1243E3E1B009BFAD0 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,17 +36,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8491CE86A5E6EBF4320F81 /* Pods_TemperatureSensorMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF57A6BF3C70D5B3A725EA4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEE14B701DF8C27B1DCD55B5 /* Pods_TemperatureSensorMac.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D18D87C2243E36D7009BFAD0 = {
 			isa = PBXGroup;
 			children = (
+				D18D87E1243E3E1B009BFAD0 /* certificate.p12 */,
 				D18D87CD243E36D7009BFAD0 /* TemperatureSensorMac */,
 				D18D87CC243E36D7009BFAD0 /* Products */,
+				F8D1E05F517B7A080E0BCA53 /* Pods */,
+				BF57A6BF3C70D5B3A725EA4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,12 +75,30 @@
 			children = (
 				D18D87CE243E36D7009BFAD0 /* AppDelegate.swift */,
 				D18D87D0243E36D7009BFAD0 /* ViewController.swift */,
+				D18D87DE243E3B8D009BFAD0 /* Managers */,
 				D18D87D2243E36DA009BFAD0 /* Assets.xcassets */,
 				D18D87D4243E36DA009BFAD0 /* Main.storyboard */,
 				D18D87D7243E36DA009BFAD0 /* Info.plist */,
 				D18D87D8243E36DA009BFAD0 /* TemperatureSensorMac.entitlements */,
 			);
 			path = TemperatureSensorMac;
+			sourceTree = "<group>";
+		};
+		D18D87DE243E3B8D009BFAD0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F8D1E05F517B7A080E0BCA53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8972AC459DA70D10A0A76505 /* Pods-TemperatureSensorMac.debug.xcconfig */,
+				966A2FB2D31F339E10EB554B /* Pods-TemperatureSensorMac.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D18D87DB243E36DA009BFAD0 /* Build configuration list for PBXNativeTarget "TemperatureSensorMac" */;
 			buildPhases = (
+				4CDB8DB6A431CED4090C34D7 /* [CP] Check Pods Manifest.lock */,
 				D18D87C7243E36D7009BFAD0 /* Sources */,
 				D18D87C8243E36D7009BFAD0 /* Frameworks */,
 				D18D87C9243E36D7009BFAD0 /* Resources */,
+				B80DED24B8FB838136C46CEB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,11 +162,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18D87D3243E36DA009BFAD0 /* Assets.xcassets in Resources */,
+				D18D87E2243E3E1B009BFAD0 /* certificate.p12 in Resources */,
 				D18D87D6243E36DA009BFAD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CDB8DB6A431CED4090C34D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TemperatureSensorMac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B80DED24B8FB838136C46CEB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D18D87C7243E36D7009BFAD0 /* Sources */ = {
@@ -134,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D18D87D1243E36D7009BFAD0 /* ViewController.swift in Sources */,
+				D18D87E0243E3B99009BFAD0 /* TemperatureManager.swift in Sources */,
 				D18D87CF243E36D7009BFAD0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +351,7 @@
 		};
 		D18D87DC243E36DA009BFAD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8972AC459DA70D10A0A76505 /* Pods-TemperatureSensorMac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TemperatureSensorMac/TemperatureSensorMac.entitlements;
@@ -287,6 +372,7 @@
 		};
 		D18D87DD243E36DA009BFAD0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 966A2FB2D31F339E10EB554B /* Pods-TemperatureSensorMac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = TemperatureSensorMac/TemperatureSensorMac.entitlements;
