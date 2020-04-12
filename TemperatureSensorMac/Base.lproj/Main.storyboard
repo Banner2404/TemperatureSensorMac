@@ -710,13 +710,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnh-S8-LQC">
-                                <rect key="frame" x="10" y="10" width="928" height="717"/>
+                                <rect key="frame" x="0.0" y="0.0" width="948" height="737"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="OaO-to-oCu">
-                                        <rect key="frame" x="234" y="363" width="460" height="354"/>
+                                        <rect key="frame" x="244" y="373" width="460" height="364"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="horizontal" alignment="firstBaseline" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSz-mT-xlL">
-                                                <rect key="frame" x="133" y="130" width="195" height="94"/>
+                                                <rect key="frame" x="133" y="135" width="195" height="94"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eSh-0s-BZR">
                                                         <rect key="frame" x="-2" y="0.0" width="166" height="94"/>
@@ -744,14 +744,24 @@
                                                     <real value="3.4028234663852886e+38"/>
                                                 </customSpacing>
                                             </stackView>
+                                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ePn-fi-sAn">
+                                                <rect key="frame" x="405" y="328" width="37" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="xMO-5b-cYJ">
+                                                    <font key="font" usesAppearanceFont="YES"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="ePn-fi-sAn" secondAttribute="trailing" constant="20" id="7wq-ln-2If"/>
+                                            <constraint firstItem="ePn-fi-sAn" firstAttribute="top" secondItem="OaO-to-oCu" secondAttribute="top" constant="20" id="guV-To-Yfl"/>
                                             <constraint firstItem="BSz-mT-xlL" firstAttribute="centerX" secondItem="OaO-to-oCu" secondAttribute="centerX" id="mC6-bn-EXs"/>
                                             <constraint firstItem="BSz-mT-xlL" firstAttribute="centerY" secondItem="OaO-to-oCu" secondAttribute="centerY" id="qeU-F0-NjB"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-e5-fS0">
-                                        <rect key="frame" x="234" y="0.0" width="460" height="355"/>
+                                        <rect key="frame" x="244" y="0.0" width="460" height="365"/>
                                     </customView>
                                 </subviews>
                                 <visibilityPriorities>
@@ -765,12 +775,16 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="tnh-S8-LQC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Nha-cK-p9b"/>
-                            <constraint firstItem="tnh-S8-LQC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="c9J-Gn-08R"/>
-                            <constraint firstAttribute="trailing" secondItem="tnh-S8-LQC" secondAttribute="trailing" constant="10" id="hcJ-xB-E48"/>
-                            <constraint firstAttribute="bottom" secondItem="tnh-S8-LQC" secondAttribute="bottom" constant="10" id="hiz-hX-WDv"/>
+                            <constraint firstItem="tnh-S8-LQC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="Nha-cK-p9b"/>
+                            <constraint firstItem="tnh-S8-LQC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="c9J-Gn-08R"/>
+                            <constraint firstAttribute="trailing" secondItem="tnh-S8-LQC" secondAttribute="trailing" id="hcJ-xB-E48"/>
+                            <constraint firstAttribute="bottom" secondItem="tnh-S8-LQC" secondAttribute="bottom" id="hiz-hX-WDv"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="connectionTextField" destination="ePn-fi-sAn" id="OrS-FJ-3LA"/>
+                        <outlet property="temperatureTextField" destination="eSh-0s-BZR" id="8G7-st-z96"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
