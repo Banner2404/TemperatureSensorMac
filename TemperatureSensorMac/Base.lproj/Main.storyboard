@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Temperature" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA" userLabel="Window">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="480"/>
@@ -762,6 +762,37 @@
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="ZcT-e5-fS0">
                                         <rect key="frame" x="244" y="0.0" width="460" height="365"/>
+                                        <subviews>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="sdm-9G-6do" customClass="LineChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="0.0" width="460" height="334"/>
+                                            </customView>
+                                            <progressIndicator wantsLayer="YES" maxValue="100" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-eH-0Hk">
+                                                <rect key="frame" x="214" y="167" width="32" height="32"/>
+                                            </progressIndicator>
+                                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1k7-T5-oLw">
+                                                <rect key="frame" x="132" y="342" width="197" height="24"/>
+                                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="ZCx-mA-YfI">
+                                                    <font key="font" metaFont="system"/>
+                                                    <segments>
+                                                        <segment label="Day" width="95" selected="YES"/>
+                                                        <segment label="Week" width="95" tag="1"/>
+                                                    </segments>
+                                                </segmentedCell>
+                                                <connections>
+                                                    <action selector="segmentedControlChanged:" target="XfG-lQ-9wD" id="GKV-Ld-Lrx"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sdm-9G-6do" firstAttribute="top" secondItem="1k7-T5-oLw" secondAttribute="bottom" constant="10" id="AEW-Ou-0LS"/>
+                                            <constraint firstItem="1k7-T5-oLw" firstAttribute="top" secondItem="ZcT-e5-fS0" secondAttribute="top" id="CtB-ZZ-tcy"/>
+                                            <constraint firstItem="Af5-eH-0Hk" firstAttribute="centerY" secondItem="ZcT-e5-fS0" secondAttribute="centerY" id="M8D-eQ-CsQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="sdm-9G-6do" secondAttribute="bottom" id="OT1-8f-mDN"/>
+                                            <constraint firstAttribute="trailing" secondItem="sdm-9G-6do" secondAttribute="trailing" id="U8X-oi-GF3"/>
+                                            <constraint firstItem="Af5-eH-0Hk" firstAttribute="centerX" secondItem="ZcT-e5-fS0" secondAttribute="centerX" id="hFF-Oc-BTe"/>
+                                            <constraint firstItem="sdm-9G-6do" firstAttribute="leading" secondItem="ZcT-e5-fS0" secondAttribute="leading" id="qQ6-yH-ZCP"/>
+                                            <constraint firstItem="1k7-T5-oLw" firstAttribute="centerX" secondItem="ZcT-e5-fS0" secondAttribute="centerX" id="wG1-nF-Qii"/>
+                                        </constraints>
                                     </customView>
                                 </subviews>
                                 <visibilityPriorities>
@@ -782,7 +813,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="Af5-eH-0Hk" id="duX-fC-2SS"/>
+                        <outlet property="chartView" destination="sdm-9G-6do" id="yYn-00-9FY"/>
                         <outlet property="connectionTextField" destination="ePn-fi-sAn" id="OrS-FJ-3LA"/>
+                        <outlet property="segmentedControl" destination="1k7-T5-oLw" id="A9a-Jg-cWS"/>
                         <outlet property="temperatureTextField" destination="eSh-0s-BZR" id="8G7-st-z96"/>
                     </connections>
                 </viewController>

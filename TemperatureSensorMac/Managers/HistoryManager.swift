@@ -8,21 +8,32 @@
 
 import Foundation
 import CryptoKit
+import Charts
 
 class HistoryManager {
 
     static let shared = HistoryManager()
-    var secretKey: String!
-    var accessKey: String!
-    let algorithm = "AWS4-HMAC-SHA256"
-    lazy var dateFormatter: DateFormatter = {
+
+    @Published var historyEntries: [HistoryEntry] = []
+    @Published var isLoading = false
+    var selectedInterval = Interval.day {
+        didSet {
+            historyEntries = []
+            loadData()
+        }
+    }
+
+    private var secretKey: String!
+    private var accessKey: String!
+    private let algorithm = "AWS4-HMAC-SHA256"
+    private lazy var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "UTC")
         formatter.dateFormat = "YYYYMMdd'T'HHmmss'Z'"
         return formatter
     }()
 
-    lazy var signFormatter: DateFormatter = {
+    private lazy var signFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone(abbreviation: "UTC")
         formatter.dateFormat = "YYYYMMdd"
@@ -56,21 +67,27 @@ class HistoryManager {
             ],
             "ExpressionAttributeValues": [
                 ":id": ["N": "1"],
-                ":timestamp": ["N": String(Date().addingTimeInterval(-60*60*24*7).timeIntervalSince1970)]
+                ":timestamp": ["N": String(selectedInterval.startDate)]
             ]
         ]
         urlRequest.httpBody = try! JSONSerialization.data(withJSONObject: data, options: [])
 
         let auth = authHeader(for: urlRequest)
         urlRequest.setValue(auth, forHTTPHeaderField: "Authorization")
+        isLoading = true
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let error = error {
-                print(error)
-                return
+            DispatchQueue.main.async {
+                defer {
+                    self.isLoading = false
+                }
+                if let error = error {
+                    print(error)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+                guard let data = data, let items = (try? JSONDecoder().decode(HistoryEntry.AWSResponse.self, from: data))?.items else { return }
+                self.historyEntries = items
             }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
-            guard let data = data, let items = (try? JSONDecoder().decode(HistoryEntry.AWSResponse.self, from: data))?.items else { return }
-            print(items)
         }.resume()
     }
 
@@ -151,7 +168,50 @@ class HistoryManager {
     func getScope() -> String {
         return [signFormatter.string(from: Date()), "us-east-1", "dynamodb", "aws4_request"].joined(separator: "/")
     }
+
+    enum Interval {
+        case day
+        case week
+
+        var startDate: TimeInterval {
+            return Date().addingTimeInterval(-timeInterval).timeIntervalSince1970
+        }
+
+        var timeInterval: TimeInterval {
+            switch self {
+            case .day:
+                return 60 * 60 * 24
+            case .week:
+                return 60 * 60 * 24 * 7
+            }
+        }
+
+        var formatter: ValueFormatter {
+            switch self {
+            case .day:
+                return ValueFormatter(format: "HH")
+            case .week:
+                return ValueFormatter(format: "E")
+            }
+        }
+    }
 }
+
+class ValueFormatter: IAxisValueFormatter {
+
+    let dateFormatter: DateFormatter
+
+    init(format: String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        self.dateFormatter = formatter
+    }
+    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+        let date = Date(timeIntervalSince1970: value)
+        return dateFormatter.string(from: date)
+    }
+}
+
 
 extension Data {
 

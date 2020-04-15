@@ -1,20 +1,26 @@
 PODS:
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
   - CocoaAsyncSocket (7.6.4)
   - CocoaMQTT (1.2.5):
     - CocoaAsyncSocket (~> 7.6.3)
 
 DEPENDENCIES:
+  - Charts
   - CocoaMQTT
 
 SPEC REPOS:
   trunk:
+    - Charts
     - CocoaAsyncSocket
     - CocoaMQTT
 
 SPEC CHECKSUMS:
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaMQTT: a61490ed3b328011c5d75169a77781983e2bb221
 
-PODFILE CHECKSUM: 587c6a5304e5b2c7acd9535563f502e20980dabc
+PODFILE CHECKSUM: 773034e213f652e807a9d3d6a6b070ceb6a2b3b2
 
 COCOAPODS: 1.8.4
