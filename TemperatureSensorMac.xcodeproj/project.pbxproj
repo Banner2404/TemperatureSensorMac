@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D16F9EF424475C2B00B82539 /* credentials.json in Resources */ = {isa = PBXBuildFile; fileRef = D16F9EF324475C2B00B82539 /* credentials.json */; };
+		D16F9EF62447612C00B82539 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F9EF52447612C00B82539 /* HistoryEntry.swift */; };
+		D16F9EFA244763B700B82539 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16F9EF9244763B700B82539 /* Decoder.swift */; };
 		D18D87CF243E36D7009BFAD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D87CE243E36D7009BFAD0 /* AppDelegate.swift */; };
 		D18D87D1243E36D7009BFAD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D87D0243E36D7009BFAD0 /* ViewController.swift */; };
 		D18D87D3243E36DA009BFAD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D18D87D2243E36DA009BFAD0 /* Assets.xcassets */; };
@@ -14,6 +17,7 @@
 		D18D87E0243E3B99009BFAD0 /* TemperatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */; };
 		D18D87E2243E3E1B009BFAD0 /* certificate.p12 in Resources */ = {isa = PBXBuildFile; fileRef = D18D87E1243E3E1B009BFAD0 /* certificate.p12 */; };
 		D19312A324437761007C99F8 /* AWSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19312A224437761007C99F8 /* AWSShadow.swift */; };
+		D19312A5244381D5007C99F8 /* HistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19312A4244381D5007C99F8 /* HistoryManager.swift */; };
 		EA8491CE86A5E6EBF4320F81 /* Pods_TemperatureSensorMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEE14B701DF8C27B1DCD55B5 /* Pods_TemperatureSensorMac.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +25,9 @@
 		8972AC459DA70D10A0A76505 /* Pods-TemperatureSensorMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureSensorMac.debug.xcconfig"; path = "Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac.debug.xcconfig"; sourceTree = "<group>"; };
 		966A2FB2D31F339E10EB554B /* Pods-TemperatureSensorMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TemperatureSensorMac.release.xcconfig"; path = "Target Support Files/Pods-TemperatureSensorMac/Pods-TemperatureSensorMac.release.xcconfig"; sourceTree = "<group>"; };
 		BEE14B701DF8C27B1DCD55B5 /* Pods_TemperatureSensorMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TemperatureSensorMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16F9EF324475C2B00B82539 /* credentials.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = credentials.json; sourceTree = "<group>"; };
+		D16F9EF52447612C00B82539 /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
+		D16F9EF9244763B700B82539 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 		D18D87CB243E36D7009BFAD0 /* TemperatureSensorMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemperatureSensorMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D18D87CE243E36D7009BFAD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D18D87D0243E36D7009BFAD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +38,7 @@
 		D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureManager.swift; sourceTree = "<group>"; };
 		D18D87E1243E3E1B009BFAD0 /* certificate.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.p12; sourceTree = "<group>"; };
 		D19312A224437761007C99F8 /* AWSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSShadow.swift; sourceTree = "<group>"; };
+		D19312A4244381D5007C99F8 /* HistoryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				D18D87E1243E3E1B009BFAD0 /* certificate.p12 */,
+				D16F9EF324475C2B00B82539 /* credentials.json */,
 				D18D87CD243E36D7009BFAD0 /* TemperatureSensorMac */,
 				D18D87CC243E36D7009BFAD0 /* Products */,
 				F8D1E05F517B7A080E0BCA53 /* Pods */,
@@ -91,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				D18D87DF243E3B99009BFAD0 /* TemperatureManager.swift */,
+				D19312A4244381D5007C99F8 /* HistoryManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -99,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				D19312A224437761007C99F8 /* AWSShadow.swift */,
+				D16F9EF52447612C00B82539 /* HistoryEntry.swift */,
+				D16F9EF9244763B700B82539 /* Decoder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +186,7 @@
 			files = (
 				D18D87D3243E36DA009BFAD0 /* Assets.xcassets in Resources */,
 				D18D87E2243E3E1B009BFAD0 /* certificate.p12 in Resources */,
+				D16F9EF424475C2B00B82539 /* credentials.json in Resources */,
 				D18D87D6243E36DA009BFAD0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +243,10 @@
 				D18D87D1243E36D7009BFAD0 /* ViewController.swift in Sources */,
 				D18D87E0243E3B99009BFAD0 /* TemperatureManager.swift in Sources */,
 				D18D87CF243E36D7009BFAD0 /* AppDelegate.swift in Sources */,
+				D16F9EF62447612C00B82539 /* HistoryEntry.swift in Sources */,
+				D16F9EFA244763B700B82539 /* Decoder.swift in Sources */,
 				D19312A324437761007C99F8 /* AWSShadow.swift in Sources */,
+				D19312A5244381D5007C99F8 /* HistoryManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        TemperatureManager.shared.connect()
+        //TemperatureManager.shared.connect()
+        HistoryManager.shared.test()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
